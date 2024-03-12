@@ -2,9 +2,43 @@
   text-align: center;
 }
 
+.body {
+  border: 2px solid black;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.react-calendar {
+  border: none;
+  box-shadow: 5px 5px 8px 1px grey;
+  border-radius: 20px;
+  box-sizing: border-box;
+  width: 350px;
+  max-width: 100%;
+  background: white;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.125em;
+}
+.react-calendar button{
+  border-radius: 40px;
+}
+.react-calendar__tile--active{
+  background-color: #4275b6;
+}
+.react-calendar__navigation{
+  background-color: #4275b6;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.card2 {
+  color: white;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 5px 4px 6px 1px grey;
+  background-color: green;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -32,6 +66,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
