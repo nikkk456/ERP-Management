@@ -32,13 +32,42 @@
   background-color: #4275b6;
   border-radius: 20px 20px 0px 0px;
 }
-
 .card2 {
   color: white;
   border: none;
   border-radius: 20px;
   box-shadow: 5px 4px 6px 1px grey;
   background-color: green;
+}
+.sidenavbar{
+  display: flex;
+}
+.uppernavbar{
+  display: none;
+}
+.sidenavbar-active{
+  margin-left: 225px;
+  max-width: 1035px;
+}
+.sidenavbar-inactive{
+  margin-left: 80px;
+  max-width: 1178px;
+}
+.container-responsive{
+  max-width: -webkit-fill-available;
+}
+@media screen and (max-width: 768px) {
+  .uppernavbar {
+    display: block; /* Show upper navbar */
+  }
+
+  .sidenavbar {
+    display: none; /* Hide side navbar */
+  }
+  .container-responsive{
+    margin-left: 0px;
+    max-width: 1140px;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {

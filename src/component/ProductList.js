@@ -12,14 +12,14 @@ const ProductList = ({ products, onDelete, onEdit }) => {
     return (
         <div className='container'>
             <div className='row text-center'>
-                <h1>PRODUCT LIST</h1>
+                <h1><span style={{borderBottom: '2px solid gold'}}>PRODUCT LIST</span></h1>
             </div>
             <div className='row'>
                 {
                     //To iterate the object and to render the products according to category
                     Object.entries(groupedProducts).map(([category, categoryProduct]) => (
                         <>
-                            <div className='row my-3'>
+                            <div className='row my-3' style={{backgroundColor: "antiquewhite", borderRadius:"10px"}}>
                                 <h2>{category}</h2>
                             </div>
                             <div className='row'>
@@ -46,10 +46,10 @@ const ProductList = ({ products, onDelete, onEdit }) => {
                                                     </div>
                                                     <div className='row g-0 mb-2'>
                                                         <div className='col-md-5' style={{ display: "flex", justifyContent: "center" }}>
-                                                            <button className='btn btn-primary' data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={()=>onEdit(item)}>Update</button>
+                                                            <button className='btn' data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={()=>onEdit(item)} style={{backgroundColor:"#4275b6", borderRadius:"15px 0px", color:"white"}}><strong>Update</strong></button>
                                                         </div>
                                                         <div className='col-md-5' style={{ display: "flex", justifyContent: "center" }}>
-                                                            <button className='btn btn-danger' onClick={() => onDelete(item)}>Delete</button>
+                                                            <button className='btn btn-danger' onClick={() => onDelete(item)} style={{borderRadius:"15px 0px"}}><strong>Delete</strong></button>
                                                         </div>
                                                     </div>
                                                 </div>

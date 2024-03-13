@@ -157,7 +157,7 @@
       "total_amount":"123",
       "expected_delivery": "2024-03-27",
       "products": [
-        {"product_id": 21, "quantity": 3},
+        {"product_id": 21, "quantity": 3} ,
         {"product_id": 27, "quantity": 2},
         {"product_id": 30, "quantity": 1}
       ]
@@ -183,7 +183,7 @@
       "total_amount":"456",
       "expected_delivery": "2024-02-28",
       "products": [
-        {"product_id": 15, "quantity": 1},
+        {"product_id": 15, "quantity": 1}, 
         {"product_id": 19, "quantity": 2},
         {"product_id": 22, "quantity": 1}
       ]
@@ -199,19 +199,6 @@
         {"product_id": 23, "quantity": 2},
         {"product_id": 27, "quantity": 1},
         {"product_id": 28, "quantity": 1}
-      ]
-    },
-    {
-      "order_id": 17,
-      "name": "James Lin",
-      "date": "2024-02-24",
-      "status": "Delivered",
-      "total_amount":"234",
-      "expected_delivery": "2024-02-29",
-      "products": [
-        {"product_id": 1, "quantity": 3},
-        {"product_id": 5, "quantity": 2},
-        {"product_id": 10, "quantity": 1}
       ]
     }
 ]

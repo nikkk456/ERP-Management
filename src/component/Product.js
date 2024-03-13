@@ -15,7 +15,6 @@ const Product = ({sidenavbar}) => {
   });
 
   const handleEdit = (productToEdit) => {
-    console.log("Hii Bro");
     setSelectedProduct(productToEdit);
     setEditedProduct(productToEdit);
   };
@@ -49,7 +48,7 @@ const Product = ({sidenavbar}) => {
     setProduct(updatedProduct);
   };
   return (
-    <div className='container' style={{marginLeft: sidenavbar?"225px":"80px", maxWidth: sidenavbar?"1035px":"1180px"}}>
+    <div className={`container container-responsive ${sidenavbar?'sidenavbar-active':'sidenavbar-inactive'} `} >
       <ProductList products={product} onDelete={handleDelete} onEdit={handleEdit} />
 
 

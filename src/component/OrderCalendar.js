@@ -10,7 +10,6 @@ const OrderCalendar = ({ orders }) => {
         console.log("Selected Date", selectedDate.toDateString());
     };
 
-    // Filter orders based on selected date
     const filteredOrders = orders.filter(order => {
         const expectedDeliveryDate = new Date(order.expected_delivery);
 
@@ -21,10 +20,9 @@ const OrderCalendar = ({ orders }) => {
             expectedDeliveryDate.getMonth() === selectedMonth &&
             expectedDeliveryDate.getDate() === selectedDay;
     });
-    // console.log(filteredOrders);
     return (
         <div className="calendar-container">
-            <h2>Order Calendar</h2>
+            <h2 className='my-3'><span style={{ borderBottom: "2px solid gold" }}>Order Calendar</span></h2>
             <div className='row'>
                 <div className='col-md-4'>
                     <Calendar
@@ -34,22 +32,22 @@ const OrderCalendar = ({ orders }) => {
                     />
                 </div>
                 <div className='col-md-8'>
-                    <h3>Orders for {selectedDate.toDateString()}</h3>
+                    <h3 className='my-2'>Orders for {selectedDate.toDateString()}</h3>
                     {filteredOrders.length > 0 ?
                         <>
-                            {filteredOrders.map((order, index) => (
-                                <div className='table-responsive'>
-                                    <table className='table'>
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Order Id</th>
-                                                <th scope="col">Customer Name</th>
-                                                <th scope="col">Order Date</th>
-                                                <th scope="col">Expected Delivery</th>
-                                                <th scope="col">Status</th>
-                                                <th scope="col">Total Amount</th>
-                                            </tr>
-                                        </thead>
+                            <div className='table-responsive'>
+                                <table className='table'>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Order Id</th>
+                                            <th scope="col">Customer Name</th>
+                                            <th scope="col">Order Date</th>
+                                            <th scope="col">Expected Delivery</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Total Amount</th>
+                                        </tr>
+                                    </thead>
+                                    {filteredOrders.map((order, index) => (
                                         <tbody>
                                             <tr key={order.order_id}>
                                                 <th scope="row">{order.order_id}</th>
@@ -60,9 +58,9 @@ const OrderCalendar = ({ orders }) => {
                                                 <td>&#36; {order.total_amount}</td>
                                             </tr>
                                         </tbody>
-                                    </table>
-                                </div>
-                            ))}
+                                    ))}
+                                </table>
+                            </div>
                         </>
                         :
                         <p>No delivery found for this date.</p>
