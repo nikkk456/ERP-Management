@@ -1,5 +1,6 @@
 # ERP Management Application
 
+
 This is a frontend application for managing orders and products.
 
 ## Features
@@ -36,4 +37,17 @@ npm start
 yarn start
 
 This will start the development server and open the application in your default web browser. If it doesn't open automatically, you can navigate to http://localhost:3000 in your browser.
+
+## ScreenShots
+### Dashboard for summarising key functionality 
+![Application Screenshot](/screenshots/ss1.png)
+
+### Order Management And Calendar View and Edit Order 
+![Order Management Screenshot](/screenshots/ss2.png)
+![Calendar View Screenshot](/screenshots/ss3.png)
+![Edit Order Screenshot](/screenshots/ss6.png)
+
+### Product List and Edit Product details 
+![Product Screenshot](/screenshots/ss4.png)
+![Product Edit Screenshot](/screenshots/ss5.png)
 
