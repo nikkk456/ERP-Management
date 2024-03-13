@@ -24,15 +24,15 @@ cd ERP-Management
 3. Install dependencies using npm or yarn:
 
 npm install
-# or
+### or
 yarn install
 
-### Usage
+## Usage
 
 1. To run the application locally, use the following command:
 
 npm start
-# or
+### or
 yarn start
 
 This will start the development server and open the application in your default web browser. If it doesn't open automatically, you can navigate to http://localhost:3000 in your browser.
