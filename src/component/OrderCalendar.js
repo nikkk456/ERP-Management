@@ -10,9 +10,9 @@ const OrderCalendar = ({ orders }) => {
         console.log("Selected Date", selectedDate.toDateString());
     };
 
+    //Function to Filter The orderes on the basis of selected expected date of delivery
     const filteredOrders = orders.filter(order => {
         const expectedDeliveryDate = new Date(order.expected_delivery);
-
         const selectedYear = selectedDate.getFullYear();
         const selectedMonth = selectedDate.getMonth();
         const selectedDay = selectedDate.getDate();
@@ -48,8 +48,8 @@ const OrderCalendar = ({ orders }) => {
                                         </tr>
                                     </thead>
                                     {filteredOrders.map((order, index) => (
-                                        <tbody>
-                                            <tr key={order.order_id}>
+                                        <tbody key={order.order_id}>
+                                            <tr>
                                                 <th scope="row">{order.order_id}</th>
                                                 <td>{order.name}</td>
                                                 <td>{order.date}</td>

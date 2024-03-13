@@ -18,12 +18,17 @@ const Orders = ({ sidenavbar }) => {
     date: '',
     products: []
   })
+  var total_delivered = 0
+  var total_shipped = 0
+  var total_processing = 0
+
   const handleDelete = (ordertodelete) => {
     alert("Are you sure you want to delete the order");
     const updatedProduct = order.filter(order => order !== ordertodelete);
     setOrder(updatedProduct);
     console.log(order);
   }
+
   const handleEdit = (ordertoedit) => {
     //To get the product name form product json using product id from order.json
     const editedProducts = ordertoedit.products.map(item => ({
@@ -34,6 +39,7 @@ const Orders = ({ sidenavbar }) => {
     setSelectedOrder({ ...ordertoedit, products: editedProducts });
     setEditedOrder({ ...ordertoedit, products: editedProducts });
   }
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setEditedOrder(prevState => ({
@@ -41,6 +47,7 @@ const Orders = ({ sidenavbar }) => {
       [name]: value
     }));
   };
+
   const handleCategoryChange = (status) => {
     setEditedOrder(prevState => ({
       ...prevState,
@@ -54,12 +61,69 @@ const Orders = ({ sidenavbar }) => {
       const updatedOrders = [...orders];
       updatedOrders[index] = editedOrder;
       setOrder(updatedOrders);
+      updateCount();
     }
   };
+  
+  //Function to update the count of total order status wise
+  const updateCount = () => {
+    order.map((item) => {
+      if (item.status === "Delivered") {
+        total_delivered = total_delivered + 1;
+      }
+      else if (item.status === "Shipped") {
+        total_shipped++;
+      }
+      else {
+        total_processing++;
+      }
+    })
+  }
+  updateCount();
 
 
   return (
     <div className={`container container-responsive ${sidenavbar ? 'sidenavbar-active' : 'sidenavbar-inactive'} `} >
+      <div className='row'>
+        <div className='col-md-4 mt-3'>
+          <div className="card mb-3 card2" style={{ maxWidth: "540px", height: "115px" }}>
+            <div className="row g-0" style={{ flexWrap: "nowrap" }}>
+              <div className="col-md-12 col-12">
+                <center><div className="card-body">
+                  <h2 className="card-title">{total_delivered}</h2>
+                  <h5 className="card-text">Product Delivered</h5>
+                </div></center>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className='col-md-4 mt-3'>
+          <div className="card mb-3 card2" style={{ maxWidth: "540px", height: "115px", backgroundColor: "#4d94b9" }}>
+            <div className="row g-0" style={{ flexWrap: "nowrap" }}>
+              <div className="col-md-12 col-12">
+                <center><div className="card-body">
+                  <h2 className="card-title">{total_shipped}</h2>
+                  <h5 className="card-text">Product Sipped</h5>
+                </div></center>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className='col-md-4 mt-3'>
+          <div className="card mb-3 card2" style={{ maxWidth: "540px", height: "115px", backgroundColor: "#991f1f" }}>
+            <div className="row g-0" style={{ flexWrap: "nowrap" }}>
+              <div className="col-md-12 col-12">
+                <center><div className="card-body">
+                  <h2 className="card-title">{total_processing}</h2>
+                  <h5 className="card-text">Product Processing/Pending</h5>
+                </div></center>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
       <div className='row text-center'>
         <h1 className='my-3'><span style={{ borderBottom: "2px solid gold" }}>ORDER LIST</span></h1>
       </div>
@@ -71,7 +135,7 @@ const Orders = ({ sidenavbar }) => {
 
 
       {/* Order Edit Modal start here  */}
-      <div className="modal fade" id="orderModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div className="modal fade" id="orderModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
@@ -85,19 +149,19 @@ const Orders = ({ sidenavbar }) => {
                   <input type="text" className="form-control" name="name" value={editedOrder.name} onChange={handleInputChange} id="exmpleName" aria-describedby="emailHelp" />
                 </div>
                 <div className="mb-3">
-                  <label for="exampleInputPassword1" className="form-label">Total Amount</label>
+                  <label htmlFor="exampleInputPassword1" className="form-label">Total Amount</label>
                   <input type="number" className="form-control" id="exmpleQuantity" name="quantity" value={editedOrder.total_amount} onChange={handleInputChange} />
                 </div>
                 <div className='row'>
                   <div className='col-md-5'>
                     <div className="mb-3">
-                      <label for="exampleInputPassword1" className="form-label">Ordered Date </label>
+                      <label htmlFor="exampleInputPassword1" className="form-label">Ordered Date </label>
                       <h5>{editedOrder.date}</h5>
                     </div>
                   </div>
                   <div className='col-md-5'>
                     <div className="mb-3">
-                      <label for="exampleInputPassword1" className="form-label">Delivery Date </label>
+                      <label htmlFor="exampleInputPassword1" className="form-label">Delivery Date </label>
                       <h5>{editedOrder.expected_delivery}</h5>
                     </div>
                   </div>
