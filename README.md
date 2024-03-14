@@ -38,6 +38,13 @@ yarn start
 
 This will start the development server and open the application in your default web browser. If it doesn't open automatically, you can navigate to http://localhost:3000 in your browser.
 
+## Working
+
+- The First Page or Home Page of this project shows the Dashboard where user can easily see the summary of key metrics and key functionality of this website where user can easily understand with the help of Line charts the date wise sales report and many more. The website contains sidebar for easy navigation between the pages which can be minimise as per user requirement.
+- The second page is for Order Mangement where user get to know more about the order details and have a functionality to update and delete the order from the list also there is a Calendar view at the bottom of the page where user can easily see the order on the basis of their expected delivery date with the help of calendar.
+- The third page is the Product Management page where user get Product listing category wise, where user not only see the product details but also have a functionality to update product details as well as to delete them. At the top right corner of the screen there is a button for the user to add new products to list by filling some form.
+- The design of this project is responsive and can be seen easily to any device screen size. 
+
 ## ScreenShots
 ### Dashboard for summarising key functionality 
 ![Application Screenshot](/screenshots/ss1.png)
