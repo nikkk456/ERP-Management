@@ -16,7 +16,7 @@ const Product = ({ sidenavbar }) => {
   const [newProduct, setNewProduct] = useState({
     id: product.length + 1,
     name: '',
-    category: '',
+    category: 'Electronics',
     price: '',
     quantity: ''
   });
